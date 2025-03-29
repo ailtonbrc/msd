@@ -8,6 +8,9 @@
 /msd-tea-terapy/.next/
 /msd-tea-terapy/dist/
 
+/server/.env
+/msd-tea-terapy/.env
+
 # Geral
 .env
 .DS_Store
