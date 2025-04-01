@@ -8,8 +8,9 @@ import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/joho/godotenv"
 
-	"github.com/msd/server/database"
-	"github.com/msd/server/routes"
+	"github.com/ailtonbrc/msd/server/database"
+	"github.com/ailtonbrc/msd/server/middleware"
+	"github.com/ailtonbrc/msd/server/routes"
 )
 
 func main() {
@@ -39,13 +40,29 @@ func main() {
 		})
 	})
 
-	// Rotas de usuários (cadastro etc.)
-	routes.UsuarioRoutes(app)
+	
+
+	// Agrupar rotas da API
+	api := app.Group("/api")
+
+	// Registrar rotas 
+	log.Println("Registrando SetupAuthRoutes")
+	routes.SetupAuthRoutes(api)
+	log.Println("Registrando SetupUsuarioRoutes")
+	routes.SetupUsuarioRoutes(api)
+	routes.SetupClinicaRoutes(api)
+
+	// ✅ Aqui adicionamos a rota protegida com middleware JWT
+	api.Get("/rota-protegida", middleware.AuthRequired, func(c *fiber.Ctx) error {
+		return c.JSON(fiber.Map{"mensagem": "Você está autenticado!"})
+	})
 
 	// Porta do servidor
 	port := os.Getenv("APP_PORT")
 	if port == "" {
 		port = "3000"
 	}
+
+	log.Println("✅ Servidor iniciado na porta " + port)
 	log.Fatal(app.Listen(":" + port))
 }
