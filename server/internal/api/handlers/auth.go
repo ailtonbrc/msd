@@ -3,9 +3,9 @@ package handlers
 import (
 	"net/http"
 
-	"simple-erp-service/config"
-	"simple-erp-service/internal/service"
-	"simple-erp-service/internal/utils"
+	"clinica_server/config"
+	"clinica_server/internal/service"
+	"clinica_server/internal/utils"
 
 	"github.com/gin-gonic/gin"
 	"gorm.io/gorm"

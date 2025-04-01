@@ -1,9 +1,9 @@
 package routes
 
 import (
-	"simple-erp-service/config"
-	"simple-erp-service/internal/api/handlers"
-	"simple-erp-service/internal/api/middlewares"
+	"clinica_server/config"
+	"clinica_server/internal/api/handlers"
+	"clinica_server/internal/api/middlewares"
 
 	"github.com/gin-gonic/gin"
 	"gorm.io/gorm"

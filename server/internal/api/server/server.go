@@ -10,8 +10,8 @@ import (
 	"syscall"
 	"time"
 
-	"simple-erp-service/config"
-	"simple-erp-service/internal/api/routes"
+	"clinica_server/config"
+	"clinica_server/internal/api/routes"
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"

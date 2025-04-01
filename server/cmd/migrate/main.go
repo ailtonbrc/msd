@@ -3,8 +3,8 @@ package main
 import (
 	"log"
 
-	"simple-erp-service/config"
-	"simple-erp-service/internal/repository/db"
+	"clinica_server/config"
+	"clinica_server/internal/repository/db"
 )
 
 func main() {

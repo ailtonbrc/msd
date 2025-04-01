@@ -1,11 +1,10 @@
 package main
 
 import (
+	"clinica_server/config"
+	"clinica_server/internal/api/server"
+	"clinica_server/internal/repository/db"
 	"log"
-
-	"simple-erp-service/config"
-	"simple-erp-service/internal/api/server"
-	"simple-erp-service/internal/repository/db"
 )
 
 func main() {

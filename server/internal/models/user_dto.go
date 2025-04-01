@@ -1,7 +1,7 @@
 package models
 
 import (
-	"simple-erp-service/internal/utils"
+	"clinica_server/internal/utils"
 )
 
 // UserDTO representa os dados de um usuário que são seguros para enviar ao frontend

@@ -1,8 +1,8 @@
 package db
 
 import (
-	"simple-erp-service/config"
-	"simple-erp-service/migrations"
+	"clinica_server/config"
+	"clinica_server/migrations"
 
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"

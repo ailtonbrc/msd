@@ -4,9 +4,9 @@ import (
 	"net/http"
 	"strconv"
 
-	"simple-erp-service/internal/models"
-	"simple-erp-service/internal/service"
-	"simple-erp-service/internal/utils"
+	"clinica_server/internal/models"
+	"clinica_server/internal/service"
+	"clinica_server/internal/utils"
 
 	"github.com/gin-gonic/gin"
 	"gorm.io/gorm"

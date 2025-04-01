@@ -4,7 +4,7 @@ import (
 	"errors"
 	"time"
 
-	"simple-erp-service/config"
+	"clinica_server/config"
 
 	"github.com/golang-jwt/jwt/v5"
 )

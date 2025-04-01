@@ -3,7 +3,7 @@ package middlewares
 import (
 	"time"
 
-	"simple-erp-service/internal/models"
+	"clinica_server/internal/models"
 
 	"github.com/gin-gonic/gin"
 	"gorm.io/gorm"

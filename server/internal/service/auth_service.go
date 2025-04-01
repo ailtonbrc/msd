@@ -4,9 +4,9 @@ import (
 	"errors"
 	"time"
 
-	"simple-erp-service/config"
-	"simple-erp-service/internal/models"
-	"simple-erp-service/internal/utils"
+	"clinica_server/config"
+	"clinica_server/internal/models"
+	"clinica_server/internal/utils"
 
 	"gorm.io/gorm"
 )

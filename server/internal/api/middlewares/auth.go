@@ -4,8 +4,8 @@ import (
 	"net/http"
 	"strings"
 
-	"simple-erp-service/config"
-	"simple-erp-service/internal/utils"
+	"clinica_server/config"
+	"clinica_server/internal/utils"
 
 	"github.com/gin-gonic/gin"
 )

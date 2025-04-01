@@ -3,8 +3,8 @@ package db
 import (
 	"log"
 
-	"simple-erp-service/internal/models"
-	"simple-erp-service/internal/utils"
+	"clinica_server/internal/models"
+	"clinica_server/internal/utils"
 
 	"gorm.io/gorm"
 )

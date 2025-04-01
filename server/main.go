@@ -1,16 +1,20 @@
 package main
 
 import (
+	"clinica_server/database"
 	"log"
 	"os"
 	"time"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/joho/godotenv"
-
-	"github.com/ailtonbrc/msd/server/database"
-	"github.com/ailtonbrc/msd/server/middleware"
-	"github.com/ailtonbrc/msd/server/routes"
+	// "clinica_server/database"
+	// "clinica_server/middleware"
+	// "clinica_server/routes"
+	// "clinica_server/config"
+	// "clinica_server/internal/api/server"
+	// "clinica_server/internal/repository/db"
+	// "clinica_server/routes"
 )
 
 func main() {

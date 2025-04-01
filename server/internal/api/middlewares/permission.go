@@ -3,7 +3,7 @@ package middlewares
 import (
 	"net/http"
 
-	"simple-erp-service/internal/utils"
+	"clinica_server/internal/utils"
 
 	"github.com/gin-gonic/gin"
 )

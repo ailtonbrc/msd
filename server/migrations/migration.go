@@ -1,8 +1,8 @@
 package migrations
 
 import (
+	"clinica_server/internal/models"
 	"log"
-	"simple-erp-service/internal/models"
 
 	"gorm.io/gorm"
 )
