@@ -11,6 +11,10 @@ CREATE DATABASE erp_system;
 -- Extensão para UUID
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
+
+
+
+
 -- Tabela de Perfis/Roles
 CREATE TABLE roles (
     id SERIAL PRIMARY KEY,

@@ -32,3 +32,4 @@ func Conectar() {
 	DB = pool
 	fmt.Println("✅ Banco de dados conectado com sucesso!")
 }
+
