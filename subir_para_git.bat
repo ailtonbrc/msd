@@ -2,7 +2,7 @@
 setlocal
 
 echo ==============================
-echo 📦 Preparando commit para o Git...
+echo Preparando commit para o Git...
 echo ==============================
 
 cd /d D:\Desenvolvimento_React\MSD
@@ -18,6 +18,6 @@ git commit -m "%COMMIT_MSG%"
 git push origin main
 
 echo.
-echo ✅ Código enviado com sucesso!
+echo Código enviado com sucesso!
 pause
 endlocal
