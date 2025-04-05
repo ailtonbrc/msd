@@ -7,6 +7,9 @@ import (
 )
 
 // User representa um usuário do sistema
+
+
+
 type User struct {
 	gorm.Model
 

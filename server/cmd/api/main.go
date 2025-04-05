@@ -2,27 +2,26 @@ package main
 
 import (
 	"clinica_server/config"
-	"clinica_server/internal/api/server"
-	"clinica_server/internal/repository/db"
-	"log"
+	"clinica_server/internal/api/routes"
+	"clinica_server/internal/repository"
+
+	"github.com/gin-gonic/gin"
 )
 
 func main() {
-	// Carregar configurações
-	cfg, err := config.Load()
-	if err != nil {
-		log.Fatalf("Erro ao carregar configurações: %v", err)
-	}
+    cfg, _ := config.Load()
 
-	// Inicializar banco de dados
-	db, err := db.InitDB(cfg)
-	if err != nil {
-		log.Fatalf("Erro ao conectar ao banco de dados: %v", err)
-	}
+    //✅ Conecta ao PostgreSQL
+    db := repository.ConectarBanco(cfg.Database.DSN()) 
 
-	// Inicializar e executar o servidor
-	s := server.NewServer(cfg, db)
-	if err := s.Run(); err != nil {
-		log.Fatalf("Erro ao iniciar o servidor: %v", err)
-	}
+    r := gin.Default()
+
+    api := r.Group("/api")
+    routes.SetupAuthRoutes(api, db, &cfg)
+    routes.SetupUsuarioRoutes(api, db)
+    routes.SetupClinicaRoutes(api, db)
+    routes.SetupPacienteRoutes(api, db)
+    routes.SetupRoleRoutes(api, db)
+
+    r.Run(":" + cfg.Server.Port)
 }

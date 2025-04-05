@@ -1,0 +1,37 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "API de Clínicas",
+    "version": "1.0.0"
+  },
+  "basePath": "/api",
+  "paths": {
+    "/clinicas": {
+      "get": {
+        "summary": "Listar clínicas",
+        "responses": { "200": {} }
+      },
+      "post": {
+        "summary": "Criar clínica",
+        "responses": { "201": {} }
+      }
+    },
+    "/clinicas/{id}": {
+      "get": {
+        "summary": "Obter clínica por ID",
+        "parameters": [{ "name": "id", "in": "path", "required": true }],
+        "responses": { "200": {}, "404": {} }
+      },
+      "put": {
+        "summary": "Atualizar clínica",
+        "parameters": [{ "name": "id", "in": "path", "required": true }],
+        "responses": { "200": {} }
+      },
+      "delete": {
+        "summary": "Excluir clínica",
+        "parameters": [{ "name": "id", "in": "path", "required": true }],
+        "responses": { "204": {} }
+      }
+    }
+  }
+}

@@ -1,37 +1,16 @@
 package models
 
-import (
-	"gorm.io/gorm"
-)
+import "time"
 
-// Role representa um perfil de usuário
+// Role representa um papel/perfil de usuário no sistema.
 type Role struct {
-	gorm.Model
-
-	Name        string       `gorm:"size:50;not null;unique" json:"name"`
-	Description string       `json:"description"`
-	Permissions []Permission `gorm:"many2many:role_permissions;" json:"permissions,omitempty"`
-	Users       []User       `gorm:"foreignKey:RoleID" json:"-"`
+    ID          uint      `gorm:"primaryKey" json:"id"`
+    Nome        string    `gorm:"size:100;not null;unique" json:"nome"`
+    Descricao   string    `gorm:"size:255" json:"descricao"`
+    CriadoEm    time.Time `gorm:"autoCreateTime" json:"criado_em"`
+    AtualizadoEm time.Time `gorm:"autoUpdateTime" json:"atualizado_em"`
 }
 
-// TableName especifica o nome da tabela
 func (Role) TableName() string {
-	return "roles"
-}
-
-// CreateRoleRequest representa os dados para criar um novo perfil
-type CreateRoleRequest struct {
-	Name        string `json:"name" binding:"required"`
-	Description string `json:"description"`
-}
-
-// UpdateRoleRequest representa os dados para atualizar um perfil
-type UpdateRoleRequest struct {
-	Name        string `json:"name"`
-	Description string `json:"description"`
-}
-
-// UpdateRolePermissionsRequest representa os dados para atualizar permissões de um perfil
-type UpdateRolePermissionsRequest struct {
-	PermissionIDs []uint `json:"permission_ids" binding:"required"`
+    return "roles"
 }

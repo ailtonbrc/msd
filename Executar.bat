@@ -40,6 +40,10 @@ cd server
 go build -o clinica_server.exe ./cmd/api
 
 echo.
+echo Limpando a tela...
+echo ===============================
+    cls
+echo.
 echo Iniciando API...
 echo ===============================
 clinica_server.exe

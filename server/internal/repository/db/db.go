@@ -1,32 +1,26 @@
-package db
+package repository
 
 import (
-	"clinica_server/config"
-	"clinica_server/migrations"
+	"clinica_server/internal/migrate"
+	"log"
 
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
-	"gorm.io/gorm/logger"
 )
 
-// InitDB inicializa a conexão com o banco de dados
-func InitDB(cfg *config.Config) (*gorm.DB, error) {
-	db, err := gorm.Open(postgres.Open(cfg.Database.DSN()), &gorm.Config{
-		Logger: logger.Default.LogMode(logger.Info),
-	})
-	if err != nil {
-		return nil, err
-	}
+func ConectarBanco(dsn string) *gorm.DB {
+    db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
+    if err != nil {
+        log.Fatalf("❌ Erro ao conectar ao banco de dados: %v", err)
+    }
 
-	// Executar migrações
-	if err := migrations.MigrateDB(db); err != nil {
-		return nil, err
-	}
+    log.Println("✅ Conectado ao banco com sucesso")
 
-	// Executar seed
-	if err := SeedDB(db); err != nil {
-		return nil, err
-	}
+    // Executar automigrations de todas as entidades
+    migrate.AutoMigrateUsuarios(db)
+    migrate.AutoMigrateClinicas(db)
+    migrate.AutoMigratePacientes(db)
+    migrate.AutoMigrateRoles(db)
 
-	return db, nil
+    return db
 }

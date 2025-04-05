@@ -1,0 +1,37 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "API de Usuários",
+    "version": "1.0.0"
+  },
+  "basePath": "/api",
+  "paths": {
+    "/usuarios": {
+      "get": {
+        "summary": "Listar usuários",
+        "responses": { "200": { "description": "Sucesso" } }
+      },
+      "post": {
+        "summary": "Criar usuário",
+        "responses": { "201": { "description": "Criado" } }
+      }
+    },
+    "/usuarios/{id}": {
+      "get": {
+        "summary": "Buscar usuário por ID",
+        "parameters": [{ "name": "id", "in": "path", "required": true }],
+        "responses": { "200": {}, "404": {} }
+      },
+      "put": {
+        "summary": "Atualizar usuário",
+        "parameters": [{ "name": "id", "in": "path", "required": true }],
+        "responses": { "200": {} }
+      },
+      "delete": {
+        "summary": "Excluir usuário",
+        "parameters": [{ "name": "id", "in": "path", "required": true }],
+        "responses": { "204": {} }
+      }
+    }
+  }
+}

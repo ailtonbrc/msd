@@ -4,6 +4,7 @@ import (
 	"clinica_server/config"
 	"clinica_server/internal/api/handlers"
 	"clinica_server/internal/api/middlewares"
+	"log"
 
 	"github.com/gin-gonic/gin"
 	"gorm.io/gorm"
@@ -11,6 +12,8 @@ import (
 
 // SetupAuthRoutes configura as rotas de autenticação
 func SetupAuthRoutes(router *gin.RouterGroup, db *gorm.DB, cfg *config.Config) {
+	log.Println("🔐 SetupAuthRoutes iniciado...") // ← Debug aqui
+	
 	authHandler := handlers.NewAuthHandler(db, cfg)
 
 	auth := router.Group("/auth")

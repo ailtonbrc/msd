@@ -1,0 +1,37 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "API de Pacientes",
+    "version": "1.0.0"
+  },
+  "basePath": "/api",
+  "paths": {
+    "/pacientes": {
+      "get": {
+        "summary": "Listar pacientes",
+        "responses": { "200": {} }
+      },
+      "post": {
+        "summary": "Criar paciente",
+        "responses": { "201": {} }
+      }
+    },
+    "/pacientes/{id}": {
+      "get": {
+        "summary": "Buscar paciente por ID",
+        "parameters": [{ "name": "id", "in": "path", "required": true }],
+        "responses": { "200": {}, "404": {} }
+      },
+      "put": {
+        "summary": "Atualizar paciente",
+        "parameters": [{ "name": "id", "in": "path", "required": true }],
+        "responses": { "200": {} }
+      },
+      "delete": {
+        "summary": "Excluir paciente",
+        "parameters": [{ "name": "id", "in": "path", "required": true }],
+        "responses": { "204": {} }
+      }
+    }
+  }
+}

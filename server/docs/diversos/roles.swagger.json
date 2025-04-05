@@ -1,0 +1,53 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "API de gerenciamento de papéis (roles)",
+    "version": "1.0.0",
+    "title": "Role API"
+  },
+  "basePath": "/api",
+  "paths": {
+    "/roles": {
+      "get": {
+        "summary": "Listar todos os roles",
+        "responses": {
+          "200": {
+            "description": "Lista de roles"
+          }
+        }
+      },
+      "post": {
+        "summary": "Criar um novo role",
+        "responses": {
+          "201": {
+            "description": "Role criado"
+          }
+        }
+      }
+    },
+    "/roles/{id}": {
+      "get": {
+        "summary": "Obter role por ID",
+        "parameters": [{ "name": "id", "in": "path", "required": true }],
+        "responses": {
+          "200": { "description": "Role encontrado" },
+          "404": { "description": "Não encontrado" }
+        }
+      },
+      "put": {
+        "summary": "Atualizar role",
+        "parameters": [{ "name": "id", "in": "path", "required": true }],
+        "responses": {
+          "200": { "description": "Atualizado com sucesso" }
+        }
+      },
+      "delete": {
+        "summary": "Remover role",
+        "parameters": [{ "name": "id", "in": "path", "required": true }],
+        "responses": {
+          "200": { "description": "Deletado com sucesso" }
+        }
+      }
+    }
+  }
+}
